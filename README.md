@@ -47,5 +47,22 @@ Script que roda tanto o server quanto as alterações nos arquivos para realizar
 Para executar o script: `npm run start`.
 
 - Modificadores de accesso private e public
-
 - Benefícios iniciais da linguagem TypeScript
+
+## Módulo 3
+
+- O tipo implícito any
+- Benefícios da tipagem estática
+- Configuração `"noImplicitAny": true`
+- Retorno de método explícito (e o que devemos tipar)
+
+O instrutor fala que devemos tipar principalmente:
+
+1. Propriedades e métodos de classes
+2. Retorno de funções e métodos (por exemplo, `void` caso não retorne nada)
+3. Parâmetros de funções e métodos
+
+Algumas outras tipagens são desnecessárias, como em atribuições diretas.
+
+- Conversão de valores da interface do usuário
+
