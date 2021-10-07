@@ -66,3 +66,14 @@ Algumas outras tipagens são desnecessárias, como em atribuições diretas.
 
 - Conversão de valores da interface do usuário
 
+## Módulo 4
+
+- Modelagem da classe `Negociacoes`
+- Utilização de Generics
+- Adição de negociações em nossa lista
+
+A classe `NegociacaoController` é responsável pela interação entre o `app.js` e os modelos `negociacao` e `negociacoes`. Nela, temos o método `adiciona()`, que cria a negociação, usamos o método `adiciona(negociacao)` da classe `negociacoes` e por fim limpamos o formulário.
+
+- Revisão sobre encapsulamento
+- Questões de mutabilidade e como solucioná-la
+- O tipo ReadonlyArray
