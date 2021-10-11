@@ -77,3 +77,71 @@ A classe `NegociacaoController` é responsável pela interação entre o `app.js
 - Revisão sobre encapsulamento
 - Questões de mutabilidade e como solucioná-la
 - O tipo ReadonlyArray
+
+## Módulo 5
+
+É possível trocrar declarações de uma classe como essa:
+
+```ts
+export class Negociacao {
+  private data: Date;
+  private quantidade: number;
+  private valor: number;
+
+  constructor(data: Date, quantidade: number, valor: number) {
+    this.data = data;
+    this.quantidade = quantidade;
+    this.valor = valor;
+  }
+}
+```
+
+Por isso:
+
+```ts
+export class Negociacao {
+  constructor(
+    private data: Date,
+    private quantidade: number,
+    private valor: number
+  ) { }
+}
+```
+
+- Nova maneira de declaração de array com generics
+- O tipo ReadonlyArray
+- O modificador readonly
+- Getters vs propriedades públicas em modo de leitura
+
+No caso de propriedades privadas com *getters*, podemos alterá-las para públicas e adicionar o modificador `readonly`, assim:
+
+```js
+export class Negociacao {
+  constructor(
+    private _data: Date,
+    public readonly quantidade: number,
+    public readonly valor: number
+  ) { }
+}
+```
+
+- Programação defensiva
+
+Se o atributo de uma classe é um objeto, por exemplo uma instância de `Date`, ele está sujeito a mudanças, mesmo se for `readonly` ou acessando através de um *getter*. Afinal, em ambos os casos, estamos acessando a **referência** do objeto. Podemos então aplicar técnicas de **programação defensiva**, para proteger, encapsular, blindar ainda mais nosso código. Por exemplo:
+
+```ts
+export class Negociacao {
+  constructor(
+    private _data: Date,
+    public readonly quantidade: number,
+    public readonly valor: number
+  ) { }
+
+  get data() {
+    const data = new Date(this._data.getTime())
+    return data;
+  }
+}
+```
+
+Não precisamos nos preocupar com os atributos `quantidade` e `valor`, já que são do tipo `number`. Mas com o atributo do tipo `Date`, precisamos retornar uma cópia do objeto, caso contrário, poderíamos alterar o atributo original com um comando como `negociacao.data.setDate(12)`.
