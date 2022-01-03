@@ -76,7 +76,7 @@ A classe `NegociacaoController` é responsável pela interação entre o `app.js
 
 - Revisão sobre encapsulamento
 - Questões de mutabilidade e como solucioná-la
-- O tipo ReadonlyArray
+- O tipo `ReadonlyArray`
 
 ## Módulo 5
 
