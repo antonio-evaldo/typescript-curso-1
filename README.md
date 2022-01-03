@@ -109,9 +109,9 @@ export class Negociacao {
 ```
 
 - Nova maneira de declaração de array com generics
-- O tipo ReadonlyArray
-- O modificador readonly
-- Getters vs propriedades públicas em modo de leitura
+- O tipo `ReadonlyArray`
+- O modificador `readonly`
+- *Getters* vs propriedades públicas em modo de leitura
 
 No caso de propriedades privadas com *getters*, podemos alterá-las para públicas e adicionar o modificador `readonly`, assim:
 
